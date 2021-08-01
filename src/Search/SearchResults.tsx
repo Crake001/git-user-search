@@ -113,7 +113,11 @@ export const SearchResults = ({
           setUserInfoResults(response.data.data.search.edges);
           setUserCountResults(response.data.data.search.userCount);
           setPaginationPageCount(
-            Math.ceil(response.data.data.search.userCount / 20)
+            Math.ceil(
+              response.data.data.search.userCount < 1000
+                ? response.data.data.search.userCount / 20
+                : 1000 / 20
+            )
           );
           setIsLoading(false);
         })
