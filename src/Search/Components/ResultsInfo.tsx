@@ -13,15 +13,13 @@ const formatResults = (count: number, query: string): JSX.Element => {
 
   if (count === 0) {
     stringResults = <>{"No Results Found for " + query}</>;
-  }
-  if (count > 1000) {
+  } else if (count > 1000) {
     stringResults = (
       <>
         <b>Results: </b> 1,000+
       </>
     );
-  }
-  if (count > 0 && count < 1000) {
+  } else if (count > 0 && count < 1000) {
     stringResults = (
       <>
         <b>Results: </b>
