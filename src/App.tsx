@@ -5,7 +5,7 @@ import { SearchResults } from "./Search/SearchResults";
 
 const useStyles = makeStyles((theme) => ({
   headerContainer: {
-    background: "#04b8e1",
+    background: "#000000",
     paddingBottom: 10,
   },
   pageContainer: {
@@ -19,14 +19,17 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     fontFamily: "'Bungee Shade', cursive",
     color: "#e3ff7e",
+    textShadow: "8px 1px #f00",
     fontSize: 50,
     marginTop: 0,
     marginBottom: 0,
     [theme.breakpoints.down("sm")]: {
       lineHeight: 1.5,
+      marginBottom: 10,
     },
     [theme.breakpoints.down("xs")]: {
       lineHeight: 1.25,
+      marginBottom: 10,
     },
   },
   root: {

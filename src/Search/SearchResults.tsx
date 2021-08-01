@@ -19,6 +19,10 @@ const useStyles = makeStyles(() => ({
     width: "max-content",
     marginTop: "40vh",
   },
+  loading: {
+    color: "#000000",
+    textShadow: "8px 1px #f00",
+  },
 }));
 
 export type userResult = {
@@ -150,9 +154,7 @@ export const SearchResults = ({
     </div>
   ) : (
     <div className={classes.loadingContainer}>
-      <div style={{}}>
-        <CircularProgress size={100} />
-      </div>
+      <CircularProgress size={100} className={classes.loading} />
     </div>
   );
 };
