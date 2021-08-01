@@ -14,12 +14,20 @@ const useStyles = makeStyles(() => ({
     display: "flex",
     alignItems: "center",
   },
+  infoContainerLargeBottom: {
+    margin: "10px 2px 2px 2px",
+    display: "flex",
+    alignItems: "center",
+    position: "absolute",
+    bottom: 10,
+  },
 }));
 
 export type CardTextProps = {
   header?: boolean;
   icon?: JSX.Element;
   margins?: boolean;
+  bottom?: boolean;
   value: string;
 };
 
@@ -28,6 +36,7 @@ export const CardText = ({
   icon,
   value,
   margins,
+  bottom,
 }: CardTextProps): JSX.Element => {
   const classes = useStyles();
   return (
@@ -40,7 +49,9 @@ export const CardText = ({
             <span
               className={
                 margins
-                  ? classes.infoContainerLarge
+                  ? bottom
+                    ? classes.infoContainerLargeBottom
+                    : classes.infoContainerLarge
                   : classes.infoContainerSmall
               }
             >
