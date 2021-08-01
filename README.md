@@ -8,9 +8,9 @@ A website to search for github user using GraphQL. Features include pagination a
 
 ### Technologies Used
 
--React (https://reactjs.org/docs/create-a-new-react-app.html)
--Typescript
--Material UI
--Axios
--GraphQL
--Debounce (https://www.npmjs.com/package/use-debounce)
+1. React (https://reactjs.org/docs/create-a-new-react-app.html)
+2. Typescript
+3. Material UI
+4. Axios
+5. GraphQL
+6. Debounce (https://www.npmjs.com/package/use-debounce)
