@@ -66,6 +66,11 @@ const App = (): JSX.Element => {
                 setCurrentPage(1);
                 setCurrentQuery(event.target.value);
               }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                }
+              }}
             />
           </Paper>
         </div>
