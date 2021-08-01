@@ -1,55 +1,55 @@
 import { makeStyles } from "@material-ui/core";
 import { Pagination } from "@material-ui/lab";
 
-export type ResultsInfoProps = {
-  userCountResults: number;
-  searchQuery: string;
-  paginationPageCount: number;
-  includeResults?: boolean;
-  setCurrentPage: (page: number) => void;
-  currentPage: number;
-};
-
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   pagination: {
     marginTop: 20,
     marginBottom: 20,
   },
 }));
 
+export type ResultsInfoProps = {
+  currentPage: number;
+  includeResults?: boolean;
+  paginationPageCount: number;
+  searchQuery: string;
+  setCurrentPage: (page: number) => void;
+  userCountResults: number;
+};
+
+const formatResults = (count: number, query: string): JSX.Element => {
+  let stringResults: JSX.Element = <></>;
+
+  if (count === 0) {
+    stringResults = <>{"No Results Found for " + query}</>;
+  }
+  if (count > 1000) {
+    stringResults = (
+      <>
+        <b>Results: </b> 1,000+
+      </>
+    );
+  }
+  if (count > 0 && count < 1000) {
+    stringResults = (
+      <>
+        <b>Results: </b>
+        {count.toString() + " for " + query}
+      </>
+    );
+  }
+  return stringResults;
+};
+
 export const ResultsInfo = ({
-  userCountResults,
-  searchQuery,
-  paginationPageCount,
-  includeResults = false,
-  setCurrentPage,
   currentPage,
+  includeResults = false,
+  paginationPageCount,
+  searchQuery,
+  setCurrentPage,
+  userCountResults,
 }: ResultsInfoProps): JSX.Element => {
   const classes = useStyles();
-
-  const formatResults = (count: number, query: string): JSX.Element => {
-    let stringResults: JSX.Element = <></>;
-
-    if (count === 0) {
-      stringResults = <>{"No Results Found for " + query}</>;
-    }
-    if (count > 1000) {
-      stringResults = (
-        <>
-          <b>Results: </b> 1,000+
-        </>
-      );
-    }
-    if (count > 0 && count < 1000) {
-      stringResults = (
-        <>
-          <b>Results: </b>
-          {count.toString() + " for " + query}
-        </>
-      );
-    }
-    return stringResults;
-  };
 
   return (
     <>
