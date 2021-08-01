@@ -58,7 +58,7 @@ export const ResultsInfo = ({
         <Pagination
           className={classes.pagination}
           count={paginationPageCount}
-          onChange={(e, page) => {
+          onChange={(_, page) => {
             setCurrentPage(page);
           }}
           page={currentPage}
