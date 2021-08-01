@@ -1,8 +1,8 @@
 import { makeStyles, Grid, CircularProgress } from "@material-ui/core";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { ResultsInfo } from "./UI/ResultsInfo";
-import { UserCards } from "./UI/UserCards";
+import { ResultsInfo } from "./Components/ResultsInfo";
+import { UserCards } from "./Components/UserCards";
 
 const useStyles = makeStyles(() => ({
   resultsContainer: {
