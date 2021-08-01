@@ -24,19 +24,19 @@ const useStyles = makeStyles(() => ({
 }));
 
 export type CardTextProps = {
+  bottom?: boolean;
   header?: boolean;
   icon?: JSX.Element;
   margins?: boolean;
-  bottom?: boolean;
   value: string;
 };
 
 export const CardText = ({
+  bottom,
   header = false,
   icon,
-  value,
   margins,
-  bottom,
+  value,
 }: CardTextProps): JSX.Element => {
   const classes = useStyles();
   return (
