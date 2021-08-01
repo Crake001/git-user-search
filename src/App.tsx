@@ -62,7 +62,6 @@ const App = (): JSX.Element => {
             <InputBase
               className={classes.input}
               placeholder="Search Github"
-              inputProps={{ "aria-label": "search github" }}
               onChange={(event) => {
                 setCurrentPage(1);
                 setCurrentQuery(event.target.value);
