@@ -18,7 +18,7 @@ import { CardText } from "./CardText";
 
 const useStyles = makeStyles(() => ({
   card: {
-    minHeight: 800,
+    minHeight: 770,
     animation: "$bounce ease .85s",
     animationIterationCount: 1,
     animationFillMode: "forwards",
@@ -40,7 +40,7 @@ const useStyles = makeStyles(() => ({
     },
   },
   actionArea: {
-    minHeight: 800,
+    minHeight: 770,
   },
   cardContent: {
     margin: "auto",
