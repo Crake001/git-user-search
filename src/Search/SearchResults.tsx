@@ -87,7 +87,10 @@ export const SearchResults = ({
   };
 
   useEffect(() => {
-    const startCursor = btoa("cursor:" + ((currentPage - 1) * 20).toString());
+    const startCursor = Buffer.from(
+      "cursor:" + ((currentPage - 1) * 20).toString(),
+      "utf-8"
+    ).toString("base64");
     setIsLoading(true);
     const getData = async () => {
       await axios
