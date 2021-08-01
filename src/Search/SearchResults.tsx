@@ -43,15 +43,43 @@ export type userResult = {
   };
 };
 
+const createQuery = (searchQuery: string, startCursor: string) => {
+  const query = `query($searchQuery:String!,$startCursor: String!) {
+    search(query: $searchQuery, type: USER, first: 20, after: $startCursor ) {
+        userCount
+        edges {
+            node {
+                ... on User {
+                    url
+                    avatarUrl
+                    name
+                    login
+                    email
+                    following {
+                      totalCount
+                    }
+                    followers {
+                      totalCount
+                    }
+                    bio
+                    location
+                }
+            }
+        }
+    }
+}`;
+  return query;
+};
+
 export type SearchResultsProps = {
-  searchQuery: string;
   currentPage: number;
+  searchQuery: string;
   setCurrentPage: (page: number) => void;
 };
 
 export const SearchResults = ({
-  searchQuery,
   currentPage,
+  searchQuery,
   setCurrentPage,
 }: SearchResultsProps): JSX.Element => {
   const classes = useStyles();
@@ -60,34 +88,6 @@ export const SearchResults = ({
   const [userCountResults, setUserCountResults] = useState<number>();
   const [paginationPageCount, setPaginationPageCount] = useState<number>(0);
   const [isLoading, setIsLoading] = useState<boolean>(true);
-
-  const createQuery = (searchQuery: string, startCursor: string) => {
-    const query = `query($searchQuery:String!,$startCursor: String!) {
-      search(query: $searchQuery, type: USER, first: 20, after: $startCursor ) {
-          userCount
-          edges {
-              node {
-                  ... on User {
-                      url
-                      avatarUrl
-                      name
-                      login
-                      email
-                      following {
-                        totalCount
-                      }
-                      followers {
-                        totalCount
-                      }
-                      bio
-                      location
-                  }
-              }
-          }
-      }
-  }`;
-    return query;
-  };
 
   useEffect(() => {
     const startCursor = Buffer.from(

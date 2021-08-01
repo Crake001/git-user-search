@@ -8,15 +8,6 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export type ResultsInfoProps = {
-  currentPage: number;
-  includeResults?: boolean;
-  paginationPageCount: number;
-  searchQuery: string;
-  setCurrentPage: (page: number) => void;
-  userCountResults: number;
-};
-
 const formatResults = (count: number, query: string): JSX.Element => {
   let stringResults: JSX.Element = <></>;
 
@@ -39,6 +30,15 @@ const formatResults = (count: number, query: string): JSX.Element => {
     );
   }
   return stringResults;
+};
+
+export type ResultsInfoProps = {
+  currentPage: number;
+  includeResults?: boolean;
+  paginationPageCount: number;
+  searchQuery: string;
+  setCurrentPage: (page: number) => void;
+  userCountResults: number;
 };
 
 export const ResultsInfo = ({
