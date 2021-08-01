@@ -10,7 +10,6 @@ const useStyles = makeStyles(() => ({
     paddingTop: 20,
     maxWidth: 1600,
     margin: "auto",
-    overflow: "hidden",
   },
   gridMargin: {
     margin: "auto",
@@ -138,7 +137,7 @@ export const SearchResults = ({
         setCurrentPage={setCurrentPage}
         currentPage={currentPage}
       />
-      <Grid container spacing={3} className={classes.gridMargin}>
+      <Grid container item spacing={3} xs={12} className={classes.gridMargin}>
         <UserCards userInfo={userInfoResults ?? []} />
       </Grid>
       <ResultsInfo
