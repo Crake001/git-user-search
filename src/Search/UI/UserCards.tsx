@@ -40,7 +40,7 @@ const useStyles = makeStyles(() => ({
     },
   },
   actionArea: {
-    minHeight: 750,
+    minHeight: 800,
   },
   cardContent: {
     margin: "auto",
