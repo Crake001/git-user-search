@@ -17,9 +17,6 @@ import { userResult } from "../SearchResults";
 import { CardText } from "./CardText";
 
 const useStyles = makeStyles(() => ({
-  card: {
-    marginBottom: 20,
-  },
   cardContent: {
     margin: "auto",
   },
@@ -41,7 +38,6 @@ export const UserCards = ({ userInfo }: UserCardProps): JSX.Element => {
         userInfo.map((user, i) => (
           <Grid key={i} item xs={12} sm={6} md={3}>
             <Card
-              className={classes.card}
               onClick={() => {
                 window.open(user.node.url, "_blank");
               }}
