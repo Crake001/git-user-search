@@ -134,27 +134,27 @@ export const SearchResults = ({
   return !isLoading ? (
     <div className={classes.resultsContainer}>
       <ResultsInfo
-        userCountResults={userCountResults ? userCountResults : 0}
-        searchQuery={searchQuery}
-        paginationPageCount={paginationPageCount}
-        includeResults
-        setCurrentPage={setCurrentPage}
         currentPage={currentPage}
+        includeResults
+        paginationPageCount={paginationPageCount}
+        searchQuery={searchQuery}
+        setCurrentPage={setCurrentPage}
+        userCountResults={userCountResults ? userCountResults : 0}
       />
       <Grid container item spacing={3} xs={12} className={classes.gridMargin}>
         <UserCards userInfo={userInfoResults ?? []} />
       </Grid>
       <ResultsInfo
-        userCountResults={userCountResults ? userCountResults : 0}
-        searchQuery={searchQuery}
-        paginationPageCount={paginationPageCount}
-        setCurrentPage={setCurrentPage}
         currentPage={currentPage}
+        paginationPageCount={paginationPageCount}
+        searchQuery={searchQuery}
+        setCurrentPage={setCurrentPage}
+        userCountResults={userCountResults ? userCountResults : 0}
       />
     </div>
   ) : (
     <div className={classes.loadingContainer}>
-      <CircularProgress size={100} className={classes.loading} />
+      <CircularProgress className={classes.loading} size={100} />
     </div>
   );
 };

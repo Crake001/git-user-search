@@ -56,14 +56,14 @@ export const ResultsInfo = ({
       {includeResults && formatResults(userCountResults, searchQuery)}
       {userCountResults > 20 && (
         <Pagination
-          count={paginationPageCount}
-          variant="outlined"
           className={classes.pagination}
-          page={currentPage}
-          siblingCount={0}
+          count={paginationPageCount}
           onChange={(e, page) => {
             setCurrentPage(page);
           }}
+          page={currentPage}
+          siblingCount={0}
+          variant="outlined"
         />
       )}
     </>

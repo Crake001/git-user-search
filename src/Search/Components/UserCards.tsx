@@ -71,8 +71,8 @@ export const UserCards = ({ userInfo }: UserCardProps): JSX.Element => {
             >
               <CardActionArea className={classes.actionArea}>
                 <CardMedia
-                  component="img"
                   alt={user.node?.name}
+                  component="img"
                   height="500"
                   image={user.node?.avatarUrl}
                   title={user.node?.name}
@@ -89,8 +89,8 @@ export const UserCards = ({ userInfo }: UserCardProps): JSX.Element => {
                   />
                   <CardText
                     icon={<Visibility className={classes.smallerIcon} />}
-                    value={user.node?.followers?.totalCount.toString()}
                     margins
+                    value={user.node?.followers?.totalCount.toString()}
                   />
                   <CardText
                     icon={<VisibilityTwoTone className={classes.smallerIcon} />}
@@ -98,9 +98,9 @@ export const UserCards = ({ userInfo }: UserCardProps): JSX.Element => {
                   />
                   <CardText margins value={user.node?.bio} />
                   <CardText
-                    margins
                     bottom
                     icon={<LocationOn />}
+                    margins
                     value={user.node.location}
                   />
                 </CardContent>

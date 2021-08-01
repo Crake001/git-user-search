@@ -58,10 +58,9 @@ const App = (): JSX.Element => {
         <div className={classes.pageContainer}>
           <p className={classes.pageTitle}>GITHUB USER SEARCH</p>
 
-          <Paper component="form" className={classes.root}>
+          <Paper className={classes.root} component="form">
             <InputBase
               className={classes.input}
-              placeholder="Search Github"
               onChange={(event) => {
                 setCurrentPage(1);
                 setCurrentQuery(event.target.value);
@@ -71,14 +70,15 @@ const App = (): JSX.Element => {
                   e.preventDefault();
                 }
               }}
+              placeholder="Search Github"
             />
           </Paper>
         </div>
       </div>
       <div className={classes.pageContainer}>
         <SearchResults
-          searchQuery={searchQuery}
           currentPage={currentPage}
+          searchQuery={searchQuery}
           setCurrentPage={setCurrentPage}
         />
       </div>
