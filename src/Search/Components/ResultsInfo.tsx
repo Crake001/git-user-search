@@ -60,7 +60,7 @@ export const ResultsInfo = ({
             setCurrentPage(page);
           }}
           page={currentPage}
-          siblingCount={0}
+          siblingCount={1}
           variant="outlined"
         />
       )}
