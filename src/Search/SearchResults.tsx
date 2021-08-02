@@ -46,23 +46,23 @@ export type userResult = {
 const createQuery = (searchQuery: string, startCursor: string) => {
   const query = `query($searchQuery:String!,$startCursor: String!) {
     search(query: $searchQuery, type: USER, first: 20, after: $startCursor ) {
-        userCount
-        edges {
-            node {
-                ... on User {
-                    url
-                    avatarUrl
-                    name
-                    login
-                    email
-                    following {
-                      totalCount
-                    }
-                    followers {
-                      totalCount
-                    }
-                    bio
-                    location
+      userCount
+      edges {
+          node {
+            ... on User {
+                  url
+                  avatarUrl
+                  name
+                  login
+                  email
+                  following {
+                    totalCount
+                  }
+                  followers {
+                    totalCount
+                  }
+                  bio
+                  location
                 }
             }
         }
